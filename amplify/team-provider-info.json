@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-glint-dev-211427-authRole",
+      "UnauthRoleArn": "arn:aws:iam::465541050084:role/amplify-glint-dev-211427-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::465541050084:role/amplify-glint-dev-211427-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-glint-dev-211427-deployment",
+      "UnauthRoleName": "amplify-glint-dev-211427-unauthRole",
+      "StackName": "amplify-glint-dev-211427",
+      "StackId": "arn:aws:cloudformation:us-east-1:465541050084:stack/amplify-glint-dev-211427/377c7770-f77d-11ed-ac62-0efd83613a5d",
+      "AmplifyAppId": "d36fns77ybw3tp"
+    }
+  }
+}
