@@ -37,13 +37,13 @@ export default function Auth({ children }: { children: React.ReactNode }) {
         },
         button: {
           // fontWeight: tokens.fontWeights.medium,
-          fontSize: tokens.fontSizes.small,
+          // fontSize: tokens.fontSizes.small,
         },
         tabs: {
           item: {
             fontWeight: tokens.fontWeights.normal,
             borderWidth: tokens.borderWidths.small,
-            fontSize: tokens.fontSizes.small,
+            // fontSize: tokens.fontSizes.small,
           },
         },
         fieldcontrol: {
@@ -51,7 +51,7 @@ export default function Auth({ children }: { children: React.ReactNode }) {
           // fontSize: tokens.fontSizes.small,
         },
         field: {
-          fontSize: tokens.fontSizes.small,
+          // fontSize: tokens.fontSizes.small,
         },
       },
       fonts: {
