@@ -10,7 +10,8 @@ import '@aws-amplify/ui-react/styles.css';
 import '../amplify_styles.css';
 
 //https://codesandbox.io/s/match-your-brand-vdwk0?file=/src/App.js
-import { HeaderUI } from './HeaderUI';
+import { LogoSlot } from './ui/LogoSlot';
+import { SignInHeader } from './ui/SignInHeader';
 
 export default function Auth({ children }: { children: React.ReactNode }) {
   const { tokens } = useTheme();
@@ -120,7 +121,14 @@ export default function Auth({ children }: { children: React.ReactNode }) {
       {authStatus === 'configuring' && 'Loading...'}
       {authStatus !== 'authenticated' ? (
         <ThemeProvider theme={theme}>
-          <Authenticator components={{ Header: HeaderUI }} />
+          <Authenticator
+            components={{
+              Header: LogoSlot,
+              SignIn: {
+                Header: SignInHeader,
+              },
+            }}
+          />
         </ThemeProvider>
       ) : (
         children

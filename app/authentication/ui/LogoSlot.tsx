@@ -4,7 +4,7 @@
 
 import { Image, useTheme } from '@aws-amplify/ui-react';
 
-export function HeaderUI() {
+export function LogoSlot() {
   const { tokens } = useTheme();
 
   return (
@@ -16,6 +16,7 @@ export function HeaderUI() {
         src="http://drive.google.com/uc?export=view&id=1zp7bDvHerxgHsjjU6rL9265u48yhKxmC"
         padding={tokens.space.medium}
       />
+      {/* <p>Make your data shine.</p> */}
     </div>
   );
 }
