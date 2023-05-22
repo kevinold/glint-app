@@ -10,6 +10,21 @@
       "StackName": "amplify-glint-dev-211427",
       "StackId": "arn:aws:cloudformation:us-east-1:465541050084:stack/amplify-glint-dev-211427/377c7770-f77d-11ed-ac62-0efd83613a5d",
       "AmplifyAppId": "d36fns77ybw3tp"
+    },
+    "categories": {
+      "auth": {
+        "glint": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "AdminQueriesa96772a6": {
+          "deploymentBucketName": "amplify-glint-dev-211427-deployment",
+          "s3Key": "amplify-builds/AdminQueriesa96772a6-37723154587849674479-build.zip"
+        }
+      },
+      "api": {
+        "AdminQueries": {}
+      }
     }
   }
 }
