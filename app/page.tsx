@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
+import Redirect from './Redirect';
 
 async function getData() {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts/1');

@@ -13,7 +13,9 @@
     },
     "categories": {
       "auth": {
-        "glint": {},
+        "glint": {
+          "googleClientId": "105556039178-1jtr8kd6skjt38ejvkvhpb91k9ec5b46.apps.googleusercontent.com"
+        },
         "userPoolGroups": {}
       },
       "function": {
@@ -21,9 +23,6 @@
           "deploymentBucketName": "amplify-glint-dev-211427-deployment",
           "s3Key": "amplify-builds/AdminQueriesa96772a6-37723154587849674479-build.zip"
         }
-      },
-      "api": {
-        "AdminQueries": {}
       }
     }
   }

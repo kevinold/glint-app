@@ -43,7 +43,9 @@
         "signupAttributes": [
           "EMAIL"
         ],
-        "socialProviders": [],
+        "socialProviders": [
+          "GOOGLE"
+        ],
         "usernameAttributes": [],
         "verificationMechanisms": [
           "EMAIL"
@@ -86,6 +88,14 @@
     }
   },
   "parameters": {
+    "AMPLIFY_auth_glint_googleClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "glint"
+        }
+      ]
+    },
     "AMPLIFY_function_AdminQueriesa96772a6_deploymentBucketName": {
       "usedBy": [
         {
