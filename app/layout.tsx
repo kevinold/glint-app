@@ -1,30 +1,26 @@
 import './globals.css';
-import { Roboto, Ubuntu } from 'next/font/google';
-import Auth from './authentication/Auth';
+import { Roboto } from 'next/font/google';
 import AuthProvider from './authentication/AuthProvider';
+import '@aws-amplify/ui-react/styles.css';
+import Header from './components/Header';
 
 const inter = Roboto({
   subsets: ['latin'],
   weight: ['400', '700'],
 });
 
-export const metadata = {
-  title: 'Glint',
-  description: 'Insights come in glints.',
-};
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <html lang="en">
       <body className={inter.className}>
         <AuthProvider>
-          <Auth>
-            <main className="p-2">{children}</main>
-          </Auth>
+          <Header/>
+          <main>{children}</main>
         </AuthProvider>
       </body>
     </html>

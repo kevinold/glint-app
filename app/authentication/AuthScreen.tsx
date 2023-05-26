@@ -1,3 +1,4 @@
+'use client';
 import {
   Authenticator,
   Theme,
@@ -106,13 +107,15 @@ export default function AuthScreen() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider
+    // theme={theme}
+    >
       <Authenticator
         components={{
-          Header: LogoSlot,
+          // Header: LogoSlot,
 
           SignIn: {
-            Header: SignInHeader,
+            // Header: SignInHeader,
           },
         }}
       />

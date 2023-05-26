@@ -1,21 +1,17 @@
-import React from 'react';
+import { Amplify, withSSRContext } from 'aws-amplify';
+import { headers } from 'next/headers';
+import { listProjects } from './graphql/queries';
+import awsConfig from './aws-exports';
 import Header from './components/Header';
+import { checkAuthAndRedirect } from './authentication/utils';
 
-async function getData() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts/1');
-  const data = await res.json();
-  return data;
-}
+Amplify.configure({ ...awsConfig, ssr: true });
+console.log('🕵️‍♀️', 'amplify', 'imported');
 
-//https://adhithiravi.medium.com/what-are-server-components-and-client-components-in-react-18-and-next-js-13-6f869c0c66b0
-
-export default async function Home() {
-  const data = await getData();
-  console.log(data);
+export default async function Page() {
   return (
     <div>
-      <Header />
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      <pre className="p-3 hellothere">Unprotected Homepage</pre>
     </div>
   );
 }
