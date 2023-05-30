@@ -1,8 +1,41 @@
-# This "input" configures a global authorization rule to enable public access to
-# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
-input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+# input AMPLIFY {
+#   globalAuthRule: AuthRule = { allow: public }
+# } # FOR TESTING ONLY!
 
-type Project @model {
+# Reference
+# 1) Modeling: https://docs.amplify.aws/cli/graphql/data-modeling/#has-many-relationship
+# 2) Auth: https://docs.amplify.aws/cli/graphql/authorization-rules
+
+# Explaination
+# { allow: owner } means the owner can create, update, delete the records
+# { allow: private, operations: [read, update] } means any authorized user (who has access to parent) can read and update the record. Example Project -> Template. Any user who has access to the project can edit the template (even if they didn't create the template)
+
+type User
+  @auth(rules: [{ allow: owner }, { allow: private, operations: [read] }])
+  @model {
+  id: ID!
+  username: String!
+  email: String!
+  projects: [Project] @manyToMany(relationName: "UserProjects")
+  owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }]) # This ensures that owners can only read or delete this field, and NOT modify. Prevent others from reassign ownership of user. See https://docs.amplify.aws/cli/graphql/authorization-rules/#field-level-authorization-rules
+}
+
+type Project
+  @auth(rules: [{ allow: owner }, { allow: private, operations: [read] }])
+  @model {
   id: ID!
   name: String!
+  description: String
+  database: String
+  prompt: [Prompt] @hasMany
+  users: [User] @manyToMany(relationName: "UserProjects")
+}
+
+type Prompt
+  @auth(rules: [{ allow: owner }, { allow: private, operations: [read] }])
+  @model {
+  id: ID!
+  name: String!
+  template: String
+  project: Project @belongsTo
 }
