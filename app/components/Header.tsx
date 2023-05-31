@@ -1,12 +1,9 @@
-'use client';
-import { useAuthenticator } from '@aws-amplify/ui-react';
-import Link from 'next/link';
-import React from 'react';
+"use client";
+import { useAuthenticator } from "@aws-amplify/ui-react";
+import Link from "next/link";
 
 export default function Header() {
-  const { user, signOut } = useAuthenticator((context) => [
-    context.authStatus,
-  ]);
+  const { user, signOut } = useAuthenticator((context) => [context.authStatus]);
 
   return (
     <nav className=" bg-slate-300 flex justify-between p-3 items-center">
