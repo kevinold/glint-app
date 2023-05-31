@@ -21,7 +21,8 @@ type User
 }
 
 type Project
-  @auth(rules: [{ allow: owner }, { allow: private, operations: [read] }])
+  #@auth(rules: [{ allow: owner }, { allow: private, operations: [read] }])
+  @auth(rules: [{ allow: owner }])
   @model {
   id: ID!
   name: String!
