@@ -1,8 +1,8 @@
 projects:
-  glint:
-    schemaPath: app/graphql/schema.json
+  glintapp:
+    schemaPath: amplify/backend/api/glintapp/build/schema.graphql
     includes:
-      - app/graphql/**/*.ts
+      - app/graphql/**/*
     excludes:
       - ./amplify/**
     extensions:
@@ -10,6 +10,6 @@ projects:
         codeGenTarget: typescript
         generatedFileName: app/API.ts
         docsFilePath: app/graphql
-extensions:
-  amplify:
-    version: 3
+        region: us-east-2
+        apiId: null
+        maxDepth: 2
