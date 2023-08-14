@@ -14,9 +14,9 @@ async function fetchData() {
       cookie: headers().get("cookie"),
     },
   };
-  console.log("🕵️‍♀️", "req", req);
+  //console.log("🕵️‍♀️", "req", req);
   const SSR = withSSRContext({ req });
-  console.log("🕵️‍♀️", "SSR", SSR);
+  //console.log("🕵️‍♀️", "SSR", SSR);
   let theData = {};
   try {
     const { data } = await SSR.API.graphql({ query: listProjects });

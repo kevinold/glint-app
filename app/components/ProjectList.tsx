@@ -1,7 +1,6 @@
+"use client";
 import { Amplify, API as _API } from "aws-amplify";
 import * as queries from "../graphql/queries";
-
-import "./App.css";
 
 import { useEffect, useState } from "react";
 import { Project } from "../API";
@@ -25,7 +24,13 @@ export default function ProjectList() {
     async function listAllProjects() {
       return await client.graphql({
         query: queries.listProjects,
-        variables: {},
+        variables: {
+          filter: {
+            name: {
+              contains: "Project",
+            },
+          },
+        },
       });
     }
     listAllProjects().then((res) => {
