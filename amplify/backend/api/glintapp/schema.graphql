@@ -26,8 +26,8 @@ type Project
   @model {
   id: ID!
   name: String!
-  description: String
-  database: String
+  description: String!
+  database: String!
   prompt: [Prompt] @hasMany
   users: [User] @manyToMany(relationName: "UserProjects")
 }
