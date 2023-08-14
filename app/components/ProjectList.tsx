@@ -4,6 +4,7 @@ import * as queries from "../graphql/queries";
 import "./App.css";
 
 import { useEffect, useState } from "react";
+import { Project } from "../API";
 import awsConfig from "../aws-exports";
 
 Amplify.configure({
@@ -18,16 +19,18 @@ Amplify.configure({
 const client = _API.generateClient();
 
 export default function ProjectList() {
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState([] as Project[]);
 
   useEffect(() => {
     async function listAllProjects() {
       return await client.graphql({
         query: queries.listProjects,
+        variables: {},
       });
     }
-    const projects = listAllProjects();
-    setProjects(projects);
+    listAllProjects().then((res) => {
+      setProjects(res.data?.listProjects?.items as Project[]);
+    });
   }, []);
 
   return (
